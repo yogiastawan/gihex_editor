@@ -1,0 +1,12 @@
+[package]
+name = "gihex-editor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+adw = { version = "0.7", package = "libadwaita", features = ["v1_6"] }
+gtk = { version = "0.9.3", package = "gtk4", features = ["gnome_47"] }
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
+
+[build-dependencies]
+glib-build-tools = "0.20"
