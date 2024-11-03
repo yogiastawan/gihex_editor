@@ -28,7 +28,7 @@
                        </object>
                   </child>
 
-                  <child>
+                  <!-- <child>
                     <object class="GtkMenuButton" id="new_button">
                       <property name="label" translatable="yes">_New</property>
                       <property name="use-underline">True</property>
@@ -38,7 +38,7 @@
                         </object>
                       </property>
                     </object>
-                  </child>
+                  </child> -->
 
               </object>
           </child>
@@ -58,11 +58,10 @@
                          </object>
                     </child>
                     <child>
-                        <object class="GtkMenuButton">
+                        <object class="GtkMenuButton" id="primary_menu">
                             <property name="primary">True</property>
                             <property name="icon-name">open-menu-symbolic</property>
                             <property name="tooltip-text" translatable="yes">Main Menu</property>
-                            <property name="menu-model">primary_menu_model</property>
                         </object>
                     </child>
                 </object>
@@ -80,43 +79,4 @@
       </object>
     </property>
   </template>
-
-  <menu id="primary_menu_model">
-  <section>
-        <item>
-          <attribute name="id">save</attribute>
-          <attribute name="label" translatable="yes">_Save</attribute>
-          <attribute name="action">page.save</attribute>
-          <attribute name="accel">&lt;control&gt;s</attribute>
-        </item>
-        <item>
-          <attribute name="id">save-as</attribute>
-          <attribute name="label" translatable="yes">Save _As…</attribute>
-          <attribute name="action">page.save-as</attribute>
-          <attribute name="accel">&lt;control&gt;&lt;shift&gt;s</attribute>
-        </item>
-        <item>
-          <attribute name="id">discard-changes</attribute>
-          <attribute name="label" translatable="yes">_Discard Changes</attribute>
-          <attribute name="action">page.discard-changes</attribute>
-        </item>
-      </section>
-
-      <section>
-        <item>
-          <attribute name="label" translatable="yes">_Preferences</attribute>
-          <attribute name="action">app.preferences</attribute>
-        </item>
-        <item>
-          <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
-          <attribute name="action">win.show-help-overlay</attribute>
-        </item>
-        <item>
-          <attribute name="label" translatable="yes">_About Gihex Editor</attribute>
-          <attribute name="action">app.about</attribute>
-          <attribute name="accel">&lt;control&gt;&lt;h</attribute>
-        </item>
-      </section>
-    </menu>
-
 </interface>

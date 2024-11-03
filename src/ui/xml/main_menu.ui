@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+<requires lib="gtk" version="4.0"/>
+<requires lib="Adw" version="1.0"/>
+
+<menu id="primary_menu_model">
+<section>
+      <item>
+        <attribute name="id">save</attribute>
+        <attribute name="label" translatable="yes">_Save</attribute>
+        <attribute name="action">page.save</attribute>
+        <attribute name="accel">&lt;control&gt;s</attribute>
+      </item>
+      <item>
+        <attribute name="id">save-as</attribute>
+        <attribute name="label" translatable="yes">Save _As…</attribute>
+        <attribute name="action">page.save-as</attribute>
+        <attribute name="accel">&lt;control&gt;&lt;shift&gt;s</attribute>
+      </item>
+      <item>
+        <attribute name="id">discard-changes</attribute>
+        <attribute name="label" translatable="yes">_Discard Changes</attribute>
+        <attribute name="action">page.discard-changes</attribute>
+      </item>
+    </section>
+
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Gihex Editor</attribute>
+        <attribute name="action">app.about</attribute>
+        <attribute name="accel">&lt;control&gt;&lt;h</attribute>
+      </item>
+    </section>
+  </menu>
+  </interface>
