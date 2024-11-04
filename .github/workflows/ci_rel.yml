@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: setup
-      run: sudo apt install libgtk-4-dev build-essential
+      run: sudo apt install libgtk-4-dev build-essential libglib2.0-dev
     - name: Build
       run: cargo build --release --verbose
