@@ -1,6 +1,5 @@
 use adw::prelude::*;
 use adw::subclass::prelude::*;
-use gettextrs::gettext;
 use gtk::{
     gio::{self, ActionEntry, ApplicationFlags},
     glib,
@@ -76,7 +75,7 @@ impl GihexEditorApp {
             .activate(move |app: &Self, _, _| app.new_page())
             .build();
         let new_comp = ActionEntry::builder("new_comp")
-            .activate(move |app: &Self, _, _| app.new_page())
+            .activate(move |app: &Self, _, _| app.new_component())
             .build();
 
         self.add_action_entries([quit_action, about_action, new_page, new_comp]);

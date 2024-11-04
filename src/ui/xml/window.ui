@@ -47,14 +47,14 @@
                     <property name="halign">end</property>
                     <property name="spacing">6</property>
                     <child>
-                        <object class="GtkButton" id="export_button">
-                            <property name="action-name">page.export</property>
+                        <object class="GtkMenuButton" id="export_button">
                             <property name="icon-name">folder-download-symbolic</property>
                             <property name="has-tooltip">true</property>
                             <property name="tooltip-text" translatable="yes">Export to Html</property>
-                            <!-- <accessibility>
-                                    <property name="label" translatable="yes">New tab</property>
-                            </accessibility> -->
+                            <property name="popover">
+                              <object class="ExportMenu" id="export_menu_popover">
+                              </object>
+                            </property>
                          </object>
                     </child>
                     <child>

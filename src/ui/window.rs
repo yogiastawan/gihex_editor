@@ -7,6 +7,8 @@ mod imp {
 
     use gtk::MenuButton;
 
+    use crate::ui::menu::export_menu::ExportMenu;
+
     use super::*;
 
     #[derive(Debug, Default, gtk::CompositeTemplate)]
@@ -28,7 +30,7 @@ mod imp {
 
         fn class_init(klass: &mut Self::Class) {
             // register popover
-            // NewMenu::ensure_type();
+            ExportMenu::ensure_type();
             klass.bind_template();
         }
 
@@ -69,10 +71,23 @@ impl GihexWindow {
             .object::<MenuModel>("primary_menu_model")
             .expect("Cannot get primary_menu_model");
         self.imp().primary_menu.set_menu_model(Some(&menu));
+        let popover = self
+            .imp()
+            .primary_menu
+            .popover()
+            .expect("Cannot get orimay menu's popover");
+        popover.set_halign(gtk::Align::End);
+
         let builder = gtk::Builder::from_resource("/com/gihex/editor/ui/xml/new_menu.ui");
         let menu = builder
             .object::<MenuModel>("new_menu_model")
             .expect("Cannot get new_menu_model");
         self.imp().new_menu.set_menu_model(Some(&menu));
+        let popover = self
+            .imp()
+            .new_menu
+            .popover()
+            .expect("Cannot get new menu's popover");
+        popover.set_halign(gtk::Align::Start);
     }
 }
