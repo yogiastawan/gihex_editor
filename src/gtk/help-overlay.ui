@@ -12,18 +12,21 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Show Shortcuts</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">Show this window.</property>
                 <property name="action-name">win.show-help-overlay</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Quit</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">Exit the app.</property>
                 <property name="action-name">app.quit</property>
               </object>
             </child>
             <child>
             <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">About</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">Show about app window.</property>
                 <property name="action-name">app.about</property>
             </object>
             </child>

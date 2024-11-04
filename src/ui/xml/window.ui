@@ -34,7 +34,7 @@
                       <property name="use-underline">True</property>
                       <property name="tooltip-text" translatable="yes">Create new document</property>
                       <property name="popover">
-                        <object class="GihexNewPopover" id="new_menu_popover">
+                        <object class="NewMenu" id="new_menu_popover">
                         </object>
                       </property>
                     </object>

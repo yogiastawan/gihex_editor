@@ -28,7 +28,7 @@ mod imp {
 
         fn class_init(klass: &mut Self::Class) {
             // register popover
-            // GihexNewPopover::ensure_type();
+            // NewMenu::ensure_type();
             klass.bind_template();
         }
 

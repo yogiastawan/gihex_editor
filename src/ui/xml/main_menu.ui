@@ -37,7 +37,6 @@
       <item>
         <attribute name="label" translatable="yes">_About Gihex Editor</attribute>
         <attribute name="action">app.about</attribute>
-        <attribute name="accel">&lt;control&gt;&lt;h</attribute>
       </item>
     </section>
   </menu>
