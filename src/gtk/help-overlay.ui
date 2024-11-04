@@ -32,6 +32,26 @@
             </child>
           </object>
         </child>
+
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes" context="shortcut window">File Operation</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">New Page</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">Create new page.</property>
+                <property name="action-name">app.new_page</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">New Component</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">Create new component.</property>
+                <property name="action-name">app.new_comp</property>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </child>
   </object>

@@ -1,5 +1,3 @@
-use std::borrow::Borrow;
-
 use adw::subclass::prelude::*;
 use gtk::gio::MenuModel;
 use gtk::prelude::*;
@@ -18,6 +16,8 @@ mod imp {
         // pub label: TemplateChild<Label>,
         #[template_child]
         pub primary_menu: TemplateChild<MenuButton>,
+        #[template_child]
+        pub new_menu: TemplateChild<MenuButton>,
     }
 
     #[glib::object_subclass]
@@ -65,9 +65,14 @@ impl GihexWindow {
 
     fn setup_menu(&self) {
         let builder = gtk::Builder::from_resource("/com/gihex/editor/ui/xml/main_menu.ui");
-        let main_menu = builder
+        let menu = builder
             .object::<MenuModel>("primary_menu_model")
             .expect("Cannot get primary_menu_model");
-        self.imp().primary_menu.set_menu_model(Some(&main_menu));
+        self.imp().primary_menu.set_menu_model(Some(&menu));
+        let builder = gtk::Builder::from_resource("/com/gihex/editor/ui/xml/new_menu.ui");
+        let menu = builder
+            .object::<MenuModel>("new_menu_model")
+            .expect("Cannot get new_menu_model");
+        self.imp().new_menu.set_menu_model(Some(&menu));
     }
 }

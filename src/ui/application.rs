@@ -72,12 +72,21 @@ impl GihexEditorApp {
             .activate(move |app: &Self, _, _| app.show_about())
             .build();
 
-        self.add_action_entries([quit_action, about_action]);
+        let new_page = ActionEntry::builder("new_page")
+            .activate(move |app: &Self, _, _| app.new_page())
+            .build();
+        let new_comp = ActionEntry::builder("new_comp")
+            .activate(move |app: &Self, _, _| app.new_page())
+            .build();
+
+        self.add_action_entries([quit_action, about_action, new_page, new_comp]);
     }
 
     fn setup_action_shortcut(&self) {
         self.set_accels_for_action("app.quit", &["<primary>q"]);
         self.set_accels_for_action("app.about", &["<primary>h"]);
+        self.set_accels_for_action("app.new_page", &["<primary>n"]);
+        self.set_accels_for_action("app.new_comp", &["<primary><shift>n"]);
     }
 
     fn show_about(&self) {
@@ -102,4 +111,8 @@ impl GihexEditorApp {
         // about.present(Some(&window));
         about.present(window.as_ref());
     }
+
+    fn new_page(&self) {}
+
+    fn new_component(&self) {}
 }

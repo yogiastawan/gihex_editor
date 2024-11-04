@@ -28,17 +28,17 @@
                        </object>
                   </child>
 
-                  <!-- <child>
-                    <object class="GtkMenuButton" id="new_button">
-                      <property name="label" translatable="yes">_New</property>
+                  <child>
+                    <object class="GtkMenuButton" id="new_menu">
+                      <property name="icon-name">document-new-symbolic</property>
                       <property name="use-underline">True</property>
                       <property name="tooltip-text" translatable="yes">Create new document</property>
-                      <property name="popover">
+                      <!-- <property name="popover">
                         <object class="NewMenu" id="new_menu_popover">
                         </object>
-                      </property>
+                      </property> -->
                     </object>
-                  </child> -->
+                  </child>
 
               </object>
           </child>
