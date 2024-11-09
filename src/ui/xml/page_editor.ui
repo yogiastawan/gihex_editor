@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <requires lib="gtk" version="4.0" />
+    <requires lib="Adw" version="1.0" />
+    <template class="PageEditor" parent="GtkWidget">
+    <child>
+    <object class="AdwOverlaySplitView" id="page_split_view">
+        <property name="sidebar">
+            <!-- pane utility -->
+            <object class="GtkLabel">
+                <property name="label" translatable="yes">This is page.</property>
+                <property name="wrap">True</property>
+            </object>
+        </property>
+        <property name="content">
+            <!-- editor -->
+            <object class="GtkLabel">
+                <property name="label" translatable="yes">This is page.</property>
+                <property name="wrap">True</property>
+            </object>
+        </property>
+    </object>
+    </child>
+
+    </template>
+</interface>
