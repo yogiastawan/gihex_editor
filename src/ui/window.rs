@@ -3,7 +3,7 @@ use gtk::gio::{ActionEntry, MenuModel};
 use gtk::prelude::*;
 use gtk::{gio, glib};
 
-use super::page::page_editor::PageEditor;
+use super::page::tab_page_editor::TabPageEditor;
 
 mod imp {
 
@@ -39,7 +39,7 @@ mod imp {
         fn class_init(klass: &mut Self::Class) {
             // register popover
             ExportMenu::ensure_type();
-            PageEditor::ensure_type();
+            TabPageEditor::ensure_type();
             klass.bind_template();
         }
 
@@ -132,7 +132,7 @@ impl GihexWindow {
     }
 
     fn new_page(&self) {
-        let page = PageEditor::default();
+        let page = TabPageEditor::default();
         self.imp().break_point.add_setters(&[(
             &page.imp().page_split_view.get(),
             "collapsed",
@@ -143,7 +143,9 @@ impl GihexWindow {
             .editor_stack
             .set_visible_child(&self.imp().tab_view.get());
         let tp = self.imp().tab_view.append(&page);
-        println!("n pages: {}", self.imp().tab_view.n_pages());
+        tp.set_title(&page.get_title());
+
+        println!("n pages: {} ", self.imp().tab_view.n_pages());
         self.imp().tab_view.set_selected_page(&tp);
     }
     fn new_component(&self) {}

@@ -1,1 +1,1 @@
-pub mod page_editor;
+pub mod tab_page_editor;
