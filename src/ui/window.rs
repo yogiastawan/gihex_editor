@@ -143,9 +143,14 @@ impl GihexWindow {
             .editor_stack
             .set_visible_child(&self.imp().tab_view.get());
         let tp = self.imp().tab_view.append(&page);
-        tp.set_title(&page.get_title());
+        tp.set_title(&page.title());
 
-        println!("n pages: {} ", self.imp().tab_view.n_pages());
+        println!(
+            "n pages: {} {} {}",
+            self.imp().tab_view.n_pages(),
+            page.title(),
+            page.is_dirty()
+        );
         self.imp().tab_view.set_selected_page(&tp);
     }
     fn new_component(&self) {}
